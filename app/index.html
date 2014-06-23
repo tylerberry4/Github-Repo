@@ -1,0 +1,132 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <title>newGithubRepo</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" 
+        type="image/png" 
+        href="http://ciembor.github.io/4bit/images/github.png">
+        <link rel="stylesheet" href="bower_components/octicons/octicons/octicons.css">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <!-- build:css styles/vendor.css -->
+        <!-- bower:css -->
+        <!-- endbower -->
+        <!-- endbuild -->
+
+        <!-- build:css styles/main.css -->
+        <link rel="stylesheet" href="styles/main.css">
+        <!-- endbuild -->
+
+        <!-- build:js scripts/vendor/modernizr.js -->
+        <script src="bower_components/modernizr/modernizr.js"></script>
+        <!-- endbuild -->
+    </head>
+    <body>
+<!-- html start -->
+      <nav>
+        <div id="navContainer">
+          <a href="http://github.com"<span class="mega-octicon octicon-mark-github"></span></a>
+          <input type="text" id="your-repos-filter" name="q" class="filter_input js-filterable-field" placeholder="Search or type a command" tabindex="2">
+          <a href="https://github.com/explore">Explore</a>
+          <a href="https://gist.github.com/">Gist</a>
+          <a href="https://github.com/blog">Blog</a>
+          <a href="https://help.github.com/">Help</a>
+          <section id="navRightIcons">
+            <a href="#"><span class="octicon octicon-plus"></span></a>
+            <a href="#"><span class="octicon octicon-tools"></span></a>
+            <a href="#"><span class="octicon octicon-sign-out"></span></a>
+          </section>
+        </div>  
+      </nav>
+      <div id="container">
+        <aside></aside>
+        <div id="mainRepos"></div>
+      </div>
+
+      <!-- Aside Left -->
+      <script type="text/template" id="profile">
+        <img src="<%= avatar_url %>" >
+        <h1><%= name %></h1>
+        <h2><%= login %></h2>
+        <section id="locationInfo">
+          <p id="location"><%= location %></p>
+          <a href="#"> <%= email %> </a>
+          <p id="joined">Joined on <%= created_at %></p>
+        </section>
+        <section id="stats">
+          <a href="#"> <%= followers %></a>
+          <a href="<%= starred_url %>">1</a>
+          <a href="#"> <%= following %></a>
+        </section>
+        <a href="<%= organizations_url %>">Organizations</a>
+      </script>
+
+        <!-- mainRepos right -->
+      <script type="text/template" id="repo">
+        <div id="tabs">
+          <a href="#"><span class="octicon octicon-diff-added"></span> Contributions</a>
+          <a href="#"><span class="octicon octicon-repo"></span> Repositories</a>
+          <a href="#"><span class="octicon octicon-rss"></span> Public Activity</a>
+        </div>
+        
+        <div id="repoSearch">
+          <input type="text" id="your-repos-filter" name="q" class="filter_input js-filterable-field" placeholder="Find a repository…" tabindex="2">
+          <input type="submit" value="Search" class="button">
+        </div>
+        <div id="allRepoInfo">
+
+          <section class="repoInfo"> 
+            <span class="mega-octicon octicon-repo"></span>
+            <a href="<%= repos[0].url %>"><%= repos[0].name %></a>
+            <p class="repoDescription"><%= repos[0].description %></p>
+            <p class="repoUpdated">Last updated at <%= repos[0].updated_at %></p>
+          </section>
+
+          <section class="repoInfo">
+            <span class="mega-octicon octicon-repo"></span> 
+            <a href="<%= repos[1].url %>"><%= repos[1].name %></a>
+            <p class="repoDescription"><%= repos[1].description %></p>
+            <p class="repoUpdated">Last updated at <%= repos[1].updated_at %></p>
+          </section>
+
+          <section class="repoInfo"> 
+            <span class="mega-octicon octicon-repo"></span>
+            <a href="<%= repos[2].url %>"><%= repos[2].name %></a>
+            <p class="repoDescription"><%= repos[2].description %></p>
+            <p class="repoUpdated">Last updated at <%= repos[2].updated_at %></p>
+          </section>
+
+          <section class="repoInfo"> 
+            <span class="mega-octicon octicon-repo"></span>
+            <a href="<%= repos[3].url %>"><%= repos[3].name %></a>
+            <p class="repoDescription"><%= repos[3].description %></p>
+            <p class="repoUpdated">Last updated at <%= repos[3].updated_at %></p>
+          </section>
+
+          <section class="repoInfo"> 
+            <span class="mega-octicon octicon-repo"></span>
+            <a href="<%= repos[4].url %>"><%= repos[4].name %></a>
+            <p class="repoDescription"><%= repos[4].description %></p>
+            <p class="repoUpdated">Last updated at <%= repos[4].updated_at %></p>
+          </section>
+
+        </div>
+      </script>
+         
+
+          <!-- build:js scripts/vendor.js -->
+          <!-- bower:js -->
+          <script src="bower_components/jquery/dist/jquery.js"></script>
+          <!-- endbower -->
+          <!-- endbuild -->
+
+          <!-- build:js scripts/main.js -->
+          <script src="scripts/main.js"></script>
+          <!-- endbuild -->
+
+          
+    </body>
+</html>
