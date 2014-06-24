@@ -61,6 +61,12 @@ gulp.task('fonts', function () {
         .pipe($.size());
 });
 
+gulp.task('deploy', ['build'], function () {
+    return gulp.src('dist')
+        .pipe($.subtree())
+        .pipe($.clean());
+});
+
 gulp.task('extras', function () {
     return gulp.src(['app/*.*', '!app/*.html'], { dot: true })
         .pipe(gulp.dest('dist'));
